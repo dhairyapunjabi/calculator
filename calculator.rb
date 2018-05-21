@@ -1,11 +1,14 @@
+require 'bigdecimal'
+require 'bigdecimal/util' # loads the to_d method
 class Numbers
   def initialize
    @array=Array.new
   end
+  attr_reader :array, :out
   def add
     @out=0.0
     arrInput
-    @array.each{|arr| @out+=arr.to_f}
+    @array.each{|arr| @out+=arr.to_d}
     @array.clear
     display
   end
@@ -14,13 +17,13 @@ class Numbers
     minuend=input
     puts "Input the subtrahend"
     subtrahend=input
-    @out=minuend.to_f-subtrahend.to_f
+    @out=minuend.to_d-subtrahend.to_d
     display
   end
   def mult
     @out=1.0
     arrInput
-    @array.each{|arr| @out*=arr.to_f}
+    @array.each{|arr| @out*=arr.to_d}
     @array.clear
     display
   end
@@ -29,7 +32,7 @@ class Numbers
     dividend=input
     puts "Input the divisor"
     divisor=input
-    @out=dividend.to_f/divisor.to_f
+    @out=dividend.to_d/divisor.to_d
     display
   end
   private
@@ -45,16 +48,6 @@ class Numbers
     end
   end
   def display
-    puts @out
+    puts @out.to_f
   end
-end
-obj=Numbers.new
-puts "Which operation do u wish to perform-\n+\n-\n*\n/"
-operation=gets.chomp
-case operation
-when "+" then obj.add
-when "-" then obj.sub
-when "*" then obj.mult
-when "/" then obj.div
-else puts "Unknown operation"
 end
