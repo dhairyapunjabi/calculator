@@ -5,7 +5,7 @@ describe Calculator do
   after :all do
     $stdin=STDIN
   end
-  context "When testing the Number class addition function" do
+  context "When testing the Calculator class addition function" do
     let(:io) {StringIO.new}
     before :each do
       #$stdin = StringIO.new("2\n3\n4\n")
@@ -50,7 +50,7 @@ describe Calculator do
       expect{num.add}.to output("Input the values till u wish and then press =\n0.0\n").to_stdout
     end
   end
-  context "When testing the  Number class subtraction function" do
+  context "When testing the Calculator class subtraction function" do
     it "The subtarct function should return the difference between minuend and subtrahend" do
       allow(num).to receive(:gets).and_return("5","6","=")
       expect{num.sub}.to output("Input the minuend\nInput the subtrahend\n-1.0\n").to_stdout
@@ -72,4 +72,5 @@ describe Calculator do
       expect{num.sub}.to output("Input the minuend\nInput the subtrahend\n0.672\n").to_stdout
     end
   end
+  context "When testing the Num
 end
