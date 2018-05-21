@@ -1,7 +1,7 @@
 require_relative "calculator"
 require "stringio"
-describe Numbers do
-  let(:num) {Numbers.new}
+describe Calculator do
+  let(:num) {Calculator.new}
   after :all do
     $stdin=STDIN
   end

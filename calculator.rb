@@ -1,6 +1,6 @@
 require 'bigdecimal'
 require 'bigdecimal/util' # loads the to_d method
-class Numbers
+class Calculator
   def initialize
    @array=Array.new
   end
@@ -32,8 +32,12 @@ class Numbers
     dividend=input
     puts "Input the divisor"
     divisor=input
+    if divisor.to_d==0.0
+      puts "Math Error"
+    else
     @out=dividend.to_d/divisor.to_d
     display
+    end
   end
   private
   def input

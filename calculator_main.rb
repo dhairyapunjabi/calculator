@@ -1,11 +1,11 @@
 require_relative "calculator"
-obj=Numbers.new
+calculator=Calculator.new
 puts "Which operation do u wish to perform-\n+\n-\n*\n/"
 operation=gets.chomp
 case operation
-when "+" then obj.add
-when "-" then obj.sub
-when "*" then obj.mult
-when "/" then obj.div
+when "+" then calculator.add
+when "-" then calculator.sub
+when "*" then calculator.mult
+when "/" then calculator.div
 else puts "Unknown operation"
 end
